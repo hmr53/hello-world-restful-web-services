@@ -16,4 +16,14 @@ public class HelloWorldController {
         return new HelloWoldBean("This is message");
     }
 
+    @GetMapping(path = "/hello/path-variable-demo-1/{user}")
+    public HelloWoldBean pathVariableDemo(@PathVariable String user){
+        return new HelloWoldBean(String.format("Hello : %s",user));
+    }
+
+    @GetMapping(path = "/hello/path-variable-demo-2/{user}")
+    public HelloWoldBean pathVariableDemo2(@PathVariable("user") String user){
+        return new HelloWoldBean(String.format("Hello : %s",user));
+    }
+
 }
